@@ -1,0 +1,31 @@
+{
+  "name": "socket.io-example",
+  "version": "0.0.1",
+  "description": "socket.io example",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mth-bs-park/socket.io-example.git"
+  },
+  "keywords": [
+    "socket.io",
+    "socket.io",
+    "example",
+    "socketio",
+    "socketio",
+    "example"
+  ],
+  "author": "Mth-bs-park",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mth-bs-park/socket.io-example/issues"
+  },
+  "homepage": "https://github.com/Mth-bs-park/socket.io-example#readme",
+  "devDependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
+  }
+}

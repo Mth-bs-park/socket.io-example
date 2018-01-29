@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Socket.io Example!!</title>
+</head>
+<body>
+
+
+    <input id="input"/><button onclick="clickRequestBtn()">request</button>
+
+<script src="lib/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script>
+
+    $().ready(function(){
+        var inputId = 'input';
+        var $input = $('#' + inputId);
+        var socket = _initSocket();
+
+        $input.keydown(function(e){
+            var isEnter = e.keyCode === 13;
+            if (isEnter) {
+                //send server
+                var value = $input.val();
+                socket.emit('request', value);
+                $input.val('');
+            }
+        });
+    });
+    
+    function _initSocket() {
+        var socket = io('http://localhost:3000');
+        socket.on('connect', function(){
+            console.log('complete connection')
+        });
+        socket.on('request', function(data){
+            console.log('event::', data);
+        });
+        socket.on('disconnect', function(){
+            console.log('kkkkk');
+        });
+
+        return socket;
+    }
+
+</script>
+
+</body>
+</html>
